@@ -1,3 +1,14 @@
 <% provide(:title, 'Home') %>
-<h1>Document Management System</h1>
-<p>This is the Home page.</p>
+
+<html>
+	<head>
+		<title>Docms | <%= yield(:title) %> </title>
+	</head>
+	<body>
+		<div class="center hero-unit">
+			<h1>Document Management System</h1>
+			<p>This is the Home page.</p>
+
+		<%= link_to "Sign up", '#', class: "btn btn-large btn-primary" %></div>
+	</body>
+<html>
