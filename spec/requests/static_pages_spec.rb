@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Static pages"
+describe "Static pages" do
 
 	describe "Home page" do 
 
@@ -44,4 +44,5 @@ describe "Static pages"
 			visit 'static_pages/about'
 			page.should have_selector('title', :text => "Docms | About Us")
 		end
+	end
 end
