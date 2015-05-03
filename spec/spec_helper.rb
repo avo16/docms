@@ -23,7 +23,7 @@ RSpec.configure do |config|
 
   #enable should
   config.expect_with :rspec do |c|
-    c.syntax = :should
+    c.syntax = [:should, :expect]
   end
 
 
