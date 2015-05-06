@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'rspec/its'
 
 RSpec.describe User, type: :model do
 	before do
@@ -12,6 +13,7 @@ RSpec.describe User, type: :model do
 	it { should respond_to(:password_digest) }
 	it { should respond_to(:password) }
 	it { should respond_to(:password_confirmation) }
+	it { should respond_to(:remember_token) }
 	it { should respond_to(:authenticate) }
 
 	#it { should be_valid }
@@ -95,5 +97,11 @@ RSpec.describe User, type: :model do
 			it { should_not eq user_for_invalid_password }
 			specify { user_for_invalid_password.should be_falsey }
 		end
+
+	end
+
+	describe "remember token" do
+			before { @user.save }
+			its(:remember_token) { should_not be_blank }
 	end
 end
