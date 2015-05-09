@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
-
+	def index
+		@users = User.all
+	end
 
 	def show
 		@user = User.find(params[:id])
@@ -14,10 +16,25 @@ class UsersController < ApplicationController
 		@user = User.new(users_params)
 		if @user.save
 			sign_in @user
-			flash[:success] = "Welcome!"
+			flash[:success] = "Welcome"
       		redirect_to @user
 		else
 			render 'new'
+		end
+	end
+
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+		if @user.update_attributes(users_params)
+			flash[:success] = "Profile updated"
+			sign_in @user
+			redirect_to @user
+		else 
+			render 'edit'
 		end
 	end
 
