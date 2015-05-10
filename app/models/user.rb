@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
     end
    
     has_secure_password
+    has_many :microposts
     before_save { |user| user.email = email.downcase }
     before_save :create_remember_token
     validates :name, :presence => true, length: { maximum: 50 }

@@ -25,18 +25,8 @@ describe "User pages" do
 		let(:user) { FactoryGirl.create(:user) }
 		before { visit user_path(user) }
 
-		#it "should have the h1 'Users'" do
-			#visit 'users/new'
-			#page.should have_selector('h1', :text => user.name)
-		
-	#	end
-
-	#	it "should have the title 'Sign up'" do
-	#		visit 'users/new'
-	#		page.should have_selector('title', :text => user.name)
-	#
-	it { should have_selector('h1', text: user.name) }
-	it { should have_selector('title', text: user.name) }
+		it { should have_selector('h1', text: user.name) }
+		it { should have_selector('title', text: user.name) }
 	end
 
 	describe "signup" do
