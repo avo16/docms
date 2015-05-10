@@ -34,20 +34,24 @@ It was realized in:
 - Rails 4.2.1
 - Ruby 2.2.1
 
+Server: WEBrick
+Database engine: Sqlite3
+
+
 It can be found on GitHub, here: https://github.com/avo16/docms
 
 It is deployed to Heroku. It can be found here: https://lit-bastion-3298.herokuapp.com/
 
 Goals achieved:
 	- Created models:
-  		- users: id: integer, name: string, email: string, password_digest: string, remember_token: string, created_at: 	  datetime, updated_at: datetime, admin: boolean
+  		- users: id: integer, name: string, email: string, password_digest: string, remember_token: string, created_at: datetime, updated_at: datetime, admin: boolean
   		- microposts: id: integer, content: string, user_id: integer, created_at: datetime, updated_at: datetime
 
   	- Created  Sign Up, Sign In forms
   	- Created Static Pages: Home, About, Help
   	- Displayed Users
   	- Created Update Form for updating a user (change name and email)
-  	- Realized tests with RSpec
+  	- Realized tests with RSpec (run all tests with the following command: "bundle exec rspec spec/" in the application's folder)
 
  To do's:
  	- create page with posts for each user
